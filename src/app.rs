@@ -89,13 +89,7 @@ pub fn Register(cx: Scope) -> impl IntoView {
 }
 
 #[server(Register, "/api")]
-async fn register(
-    _cx: Scope,
-    full_name: String,
-    preferred_name: String,
-    username: String,
-    password: String,
-) -> Result<(), ServerFnError> {
+async fn register(_cx: Scope, name: String) -> Result<(), ServerFnError> {
     do_falliable_thing().await?;
 
     Ok(())
